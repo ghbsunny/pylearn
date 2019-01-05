@@ -27,6 +27,13 @@ for i in range(1,10):
         print('{}*{}={}\t'.format(j,i,j*i),end="")
     print()
 
+print("another methon")
+for i in range(1,10):
+    s =""
+    for j in range (1,i+1):
+        s += "{}*{}={:<4}".format(i,j,i*j)
+    print("{:>72}".format(s))
+
 print("different way to show 9*9,methon 1:")
 for i in range(1,10):
     for j in range (i,10):
@@ -43,3 +50,17 @@ for i in range(1,10):
         else:
              s += str(i) + '*' + str(j) + '=' + str(i*j)+ " "
     print(s)
+for i in range(1,10):
+    s =""
+    for j in range (i,10):
+        if j<4:
+            s += "{}*{}={:<2} ".format(i,j,i*j)
+        else:
+            s += "{}*{}={:<3} ".format(i,j,i*j)
+    print("{:>69}".format(s))
+print("before is equal as below")
+for i in range(1,10):
+    s =""
+    for j in range (i,10):
+        s += "{}*{}={:<{}} ".format(i,j,i*j, 2 if j<4 else 3)
+    print("{:>69}".format(s))

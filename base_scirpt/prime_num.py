@@ -51,3 +51,41 @@ for i in range(3,100001,2):
             strs += str(i) + ' '
 print(count)
 print(strs)
+
+print("--------------------------------")
+import datetime
+start = datetime.datetime.now()
+count = 1
+for x in range(3,100000,2):
+    if x > 10 and x%10 == 5:
+        continue
+    for i in range(3,int(x ** 0.5) + 1,2):
+        if x%i == 0:
+            break
+    else:
+        count += 1
+        pass
+delta = (datetime.datetime.now() - start).total_seconds()
+print(delta)
+print(count)
+print("-------------------------------------")
+
+import datetime
+start = datetime.datetime.now()
+number = 100000
+count = 2
+for num in range(4,number):
+    if num%6 != 1 and num%6 != 5:
+        continue
+    else:
+        snum = int(num**0.5 + 1)
+        for i in range(5,snum,2):
+            if not num%i:
+                break
+        else:
+            count +=1
+            pass
+delta = (datetime.datetime.now() - start).total_seconds()
+print(delta)
+print(count)
+print("-------------------------------------")
