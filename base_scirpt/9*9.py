@@ -64,3 +64,7 @@ for i in range(1,10):
     for j in range (i,10):
         s += "{}*{}={:<{}} ".format(i,j,i*j, 2 if j<4 else 3)
     print("{:>69}".format(s))
+
+print("use list comprehension to print9*9")
+[print("{}*{}={:<3}{}".format(j,i,i*j,'\n' if i==j else ' '),end="")for i in range(1,10) for j in range(1,i+1)]
+[print("{}*{}={:<{}}{}".format(j,i,i*j,2 if i == 1 else 3,'\n' if i==j else ' '),end="")for i in range(1,10) for j in range(1,i+1)]
