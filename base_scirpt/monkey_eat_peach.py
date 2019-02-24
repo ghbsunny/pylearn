@@ -12,4 +12,15 @@ while True:
         break
     a = (a+1)*2
 print(a)
-
+def monkey(n):
+    if n == 1:
+        return 1
+    return 2 *( monkey(n-1) + 1)
+peach = monkey(10)
+print(peach)
+print('----------------------------')
+def peach(days=10):
+    if days == 1:
+        return 1
+    return (peach(days-1)+1)*2
+print(peach(10))
