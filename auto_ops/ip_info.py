@@ -1,7 +1,16 @@
-#根据输入的IP或子网返回网络、掩码、广播、反向解析、子网数、IP类型等信息
+# encoding: utf-8
 #! /usr/bin/env python
 from IPy import IP
-ip_s = input('please input an IP or net-range: ')
+"""
+安装IPy模块
+wget https://pypi.python.org/packages/source/I/IPy/IPy-0.81.tar.gz --no-check-certificate
+tar -zxvf IPy-0.81.tar.gz
+cd IPy-0.81/
+python setup.py install
+
+根据输入的IP或子网返回网络、掩码、广播、反向解析、子网数、IP类型等信息"""
+
+ip_s = raw_input('please input an IP or net-range: ')
 ips=IP(ip_s)
 if len(ips) > 1:
     print('net: %s' %ips.net())
