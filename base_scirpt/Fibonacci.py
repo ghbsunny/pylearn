@@ -102,5 +102,41 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 newfib = [fib(x) for x in range(35)]
 print(newfib)
-print('----------------------------------')
+print('-------------Use Class-----------------')
+class Fib:
+    def __init__(self):
+        self.items = [0,1,1]
+    
+    def __call__(self,index):       
+        return self[index]
+    
+    def __iter__(self):
+        return iter(self.items)
+    
+    def __len__(self):
+        return len(self.items)
+    
+    def __getitem__(self,index):
+        if index < 0:
+            raise IndexError('Wrong Index')
+            
+        if index < len(self.items):
+            return self.items[index]
+        
+        for i in range(len(self),index+1):
+            self.items.append(self.items[i-1]+self.items[i-2])
+        return self.items[index]
+    
+    def __str__(self):
+        return str(self.items)
+    
+    __repr__ = __str__
+    
+fib = Fib()
+print(fib(5),len(fib))
+print(fib(7),len(fib))
+for x in fib:
+    print(x)
+
+print(fib[5],fib[9])
 
