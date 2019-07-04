@@ -34,3 +34,21 @@ def foo2():
 
 dispatcher()
 
+print("利用getattr实现命令分发器")
+class Dispatcher:
+    def __init__(self):
+        self._run()
+    
+    def cmd1(self):
+        print("1 I am cmd1")
+    
+    def cmd2(self):
+        print("2 I am cmd2")
+    
+    def _run(self):
+        while True:
+            cmd = input("please input a command: ").strip()
+            if cmd == "quit":
+                break
+            getattr(self,cmd,lambda :print("Unknown Command {}".format(cmd)))()
+Dispatcher()

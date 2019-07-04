@@ -102,7 +102,11 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 newfib = [fib(x) for x in range(35)]
 print(newfib)
+<<<<<<< HEAD
 print('---------Use Class---------------------')
+=======
+print('-------------Use Class-----------------')
+>>>>>>> e8121fde15c313fd10762cc2655c0b023de313e3
 class Fib:
     def __init__(self):
         self.items = [0,1,1]
@@ -137,5 +141,10 @@ print(fib(5),len(fib))
 print(fib(7),len(fib))
 for x in fib:
     print(x)
+<<<<<<< HEAD
+=======
+
+print(fib[5],fib[9])
+>>>>>>> e8121fde15c313fd10762cc2655c0b023de313e3
 
 print(fib[5],fib[9])
